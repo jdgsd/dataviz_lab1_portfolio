@@ -1,6 +1,6 @@
 :root {
   --color-accent: oklch(65% 50% 0);
-  --border-gray: oklch(80% 3% 200); 
+  --border-gray: oklch(80% 3% 200);
   /* ADD the rest of the color definitions here if needed! */
 }
 
@@ -37,21 +37,23 @@ nav a{
   color: inherit;
   padding: 0.5em;
   margin-bottom: 1rem;
-  border-bottom: 1px solid var(--border-gray);
+  border-bottom: 1px solid var(--border-color);
+  --border-color: oklch(50% 10% 200 / 40%);
 }
 
 nav a.current {
-  border-bottom: 0.4em solid var(--border-gray);
+  border-bottom: 0.4em solid var(--border-color);
 }
 
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
 input,
 textarea,
-button { 
+button,
+select { 
   font: inherit;
 }
 
@@ -97,4 +99,13 @@ article {
 
 .cv-detail {
   grid-column: 2;
+}
+
+label.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: inline-flex;
+  gap: 4px;
+  font: 80%/1 system-ui;
 }
